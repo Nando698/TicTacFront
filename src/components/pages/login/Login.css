@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "8bit";
+    src: local('pixel_operator'),
+     url("../../../fonts/pixel_operator/PixelOperator8.ttf") format("truetype");
+    font-weight: bold;
+    }
+
+.logForm {
+    display: flex;
+    flex-direction: row;
+    align-items:first baseline;
+    justify-content: space-evenly;
+    padding-top: 10vw;
+
+}
+
+.logForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logForm div form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.joinForm {
+    border-right: 3px solid rgba(0, 0, 0, 0.267);
+    padding-right: 15%;
+}
+
+h2{
+    font-size: 1em;
+    color: azure;
+    font-family: '8bit';
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+@media (max-width: 900px) {
+
+
+    
+    .logForm{
+        margin: 100px 0 0 0 ;
+        padding: 0 ;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+
+    .joinForm{
+        width: 75% ;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        border: 0;
+
+    }
+
+    .hostForm{
+        width: 75% ;
+
+    }
+
+    h2{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+}

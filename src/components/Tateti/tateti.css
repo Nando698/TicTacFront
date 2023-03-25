@@ -1,0 +1,95 @@
+.tateti-board {
+    
+    width: 30vw;
+    height: 30vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+    
+    
+}
+
+
+.tateti-board div {
+    background-color: rgb(35, 57, 82);
+    width: auto;
+    height: auto;
+    cursor:pointer;
+    border-radius: 0%;
+    clip-path: polygon(36% 0, 0 0, 0 29%, 0 57%, 0 100%, 30% 100%, 73% 100%, 100% 100%, 100% 59%, 100% 31%, 100% 0, 74% 0);
+    transition: all .7S ;
+    
+}
+.tateti-container {
+    width: 30vw;
+}
+
+
+.tateti-board .cruz {
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    background-color: rgb(201, 18, 18);
+}
+
+.tateti-board .circulo {
+    border-radius: 50%;
+    background-color: rgb(204, 184, 2);
+
+    
+}
+
+.noClick {
+    pointer-events: none;
+}
+
+@keyframes x-winner {
+    from {
+        transform:scale(1) rotate(0deg);
+        
+    }
+    to {
+        transform: scale(0) rotate(360deg);
+    }
+}
+
+@keyframes o-winner {
+    from {
+        transform:scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+
+.cruzWin {
+    animation: x-winner infinite 1s ease-in-out alternate;
+}
+
+.circuloWin {
+    animation: o-winner infinite 1s ease-in-out alternate;
+}
+
+
+
+@media (max-width: 900px) {
+
+    .tateti-container{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .mainContainer{
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tateti-board {
+    margin: 0;
+    width: 100vw;
+    height: 100vw;
+
+}
+
+
+}
