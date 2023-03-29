@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "8bit";
+    src: local('pixel_operator'),
+     url("../../fonts/pixel_operator/PixelOperator8.ttf") format("truetype");
+    font-weight: bold;
+    }
+
+h2 {
+    font-family: '8bit';
+    margin-top: 2em;
+}
+

@@ -40,10 +40,10 @@ export default function Tateti () {
     })
 
 
-
+    const board = document.querySelector('.tateti-board')
     const efecto = (clase) => {
         const squares = document.querySelectorAll(`.${clase}`)
-        const board = document.querySelector('.tateti-board')
+        
 
         board.classList = 'tateti-board noClick'
 
@@ -62,6 +62,8 @@ export default function Tateti () {
     const tateClick =  (e) => {
         let p1 = getUserID() == sessionData.playerOne.uid
         
+
+
         if(sessionData.turn == p1){
 
             setSessionData({...sessionData, classes: {...sessionData.classes, [e.target.id]: p1 ? 'cruz' : 'circulo' } })

@@ -11,7 +11,7 @@ import {
 } from "../../../utils/utils";
 import { emit, on } from "../../../utils/socket.js";
 import { useEffect } from "react";
-
+import CircularIndeterminate from "../../Loader/Loader.jsx";
 
 const buttonStyle = { backgroundColor: "black" };
 const styles = {  margin: "10px 0 10px 0", boxShadow: 3 };
@@ -25,12 +25,13 @@ export default function Login() {
   useEffect(() => {
 
     emit('client:connected', { uid: getUserID()})
+    fetch(`${process.env.REACT_APP_BASE_URL}/info`).then(resp => setServerInfo(resp))
 
   })
 
   const [nameFIeld, setNameField] = React.useState("");
   const [selectedSession, setSelectedSession] = React.useState("");
-
+  const [serverInfo, setServerInfo] = React.useState()
   
 
 
@@ -83,6 +84,13 @@ export default function Login() {
 
   return (
     <>
+
+    { !serverInfo? ( 
+    
+      <CircularIndeterminate />
+
+    ) : (
+
       <div className="logForm">
         <div className="joinForm">
           
@@ -123,7 +131,7 @@ export default function Login() {
             </Button>
           
         </div>
-      </div>
-    </>
+      </div> 
+        )}    </>
   );
 }
